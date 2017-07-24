@@ -1,0 +1,14 @@
+{
+    "output": "docs",
+    "plugins": [
+        "mermaid-full@>=0.5.1",
+        "youtube",
+        "prism", "-highlight",
+        "disqus"
+    ],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "techbootcamp"
+        }
+    }
+}
