@@ -99,8 +99,8 @@ entities@^1.1.1, entities@~1.1.1:
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
 
 fs-extra@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.0.tgz#414fb4ca2d2170ba0014159d3a8aec3303418d9e"
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.1.tgz#7fc0c6c8957f983f57f306a24e5b9ddd8d0dd880"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^3.0.0"
@@ -284,8 +284,8 @@ select@^1.1.2:
   resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
 
 simple-git@^1.74.1:
-  version "1.74.1"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.74.1.tgz#802f1cb6f38e826aa238bda19990e7e3b3198181"
+  version "1.75.0"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.75.0.tgz#eaddc90118b40a1dca3837d51c50ac064ee1d288"
   dependencies:
     debug "^2.6.7"
 
