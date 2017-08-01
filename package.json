@@ -15,8 +15,8 @@
     "simple-git": "^1.74.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "precommit": "node deploy.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+    // "precommit": "node deploy.js"
   },
   "keywords": [],
   "author": "",
