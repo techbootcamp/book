@@ -13,5 +13,6 @@
         * [Javascript](modules/web-development/frontend/javascript/intro.md)
         * [Authentication](modules/web-development/security/authentication.md)
     * [Best Practices]()
+        * [SOLID Principles]()
 * [Elective Modules]()
 * [Architecture Katas]()

@@ -9,5 +9,3 @@
 ### ECMA
 
 ## ES2015
-
-## Scopes & Closures

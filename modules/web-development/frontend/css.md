@@ -11,6 +11,10 @@
 ## Common Selectors
 
 ## Common Styling Techniques
+> centering horizontally, Make a picture a perfect circle
+
+## CSS Transitions and CSS Animations
+> how are the two different?
 
 ## CSS Pre-processors and their purpose
 
