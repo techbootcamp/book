@@ -5,7 +5,6 @@ node_js:
 cache:
   directories:
     - node_modules # NPM packages
-    - _book
 install:
   - npm install
 script:
