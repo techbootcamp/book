@@ -36,4 +36,4 @@
 > How can people get 
 
 ## Technical Challenge
-> Link to Challenge after you give your presentation
+> Link to Challenge after you give your presentation (Maybe ask every team to make a GraphQL API using Azure, then can then test it using GraphQL tester, remember you need to come up with a scenario cool enough for people to wanna build the API)
