@@ -1,14 +1,16 @@
 # Package Development/ API Design
 
-## Semantic Versioning
-> Talk about what is the three different parts of a semantic version
-> Why it exists
-> Why is it used on packages but not in APIs
-> What version do you use when creating a package from scratch?
-
 ## SOAP
 > What is it? Where is it still being used?
 > Why is it not widely used anymore?
+
+## Web Authentication (optional)
+> Different between authentication and authorization
+
+### OAuth2
+> What is it for?
+
+### JSON Web Token
 
 ## REST
 > A little history of REST (who made and named it?)
