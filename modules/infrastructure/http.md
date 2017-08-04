@@ -4,6 +4,10 @@
 
 HTTP (HyperText Transfer Protocol) is the protocol for the Internet. HTTP allows you to request an asset and then returns a response.
 
+## History of HTTP
+> What's the first server?
+> Who wrote the first spec?
+
 ## HTTP Request
 ### Method
 (GET, POST, PUT, DELETE, PATCH)
@@ -53,5 +57,15 @@ GET Method does not have a request body
 * `Content-Type`
 * `Content-Length`
 
-## Resource
+## Acknowledgement Seqence
+
+## HTTP2
+> A little history of HTTP2
+> What's different from HTTP1?
+> What are some cool features?
+> How can we play with it?
+
+## Technical Challenge
+
+## Resources
 * [Awesome Presentation](https://robrich.org/slides/anatomy_of_a_web_request/)
