@@ -36,8 +36,11 @@ requestRandomNumberFact
     console.log(fact.text)
   })
 ```
-## To Publish
+
+## Publishing the Gitbook
 1. `git add .`
 2. Commit your changes with `git commit -m "<YOUR COMMIT MESSAGE>"`
 3. `git push`
 4. Travis will build your changes and build the gitbook and do a `git push --force` on the `gh-pages` branch.  This way you don't have to worry about merge conflicts :D
+5. Wait a minute and go to the [Gitbook](https://techbootcamp.github.io/book/) to see your change.
+6. If you don't see your change, disable your cache [See how on chrome here](https://stackoverflow.com/a/36339076/812436) and refresh with your devtool open. OR you can try holding `shift` and click refresh.

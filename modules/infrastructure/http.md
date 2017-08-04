@@ -59,13 +59,27 @@ GET Method does not have a request body
 
 ## Acknowledgement Seqence
 
+## DNS Lookup
+
 ## HTTP2
 > A little history of HTTP2
 > What's different from HTTP1?
 > What are some cool features?
 > How can we play with it?
 
+## HTTP Server
+### Compare contrast IIS, Apache, and Nginx
+
+### How to Spin up a HTTP Server?
+> on Windows
+> Using Python
+> Using NodeJS
+> Maybe do a quick demo on NodeJS
+
+## Tools to Debug an HTTP endpoint
+
 ## Technical Challenge
+> Link to challenge after you give your presentation?
 
 ## Resources
 * [Awesome Presentation](https://robrich.org/slides/anatomy_of_a_web_request/)

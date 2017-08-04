@@ -10,6 +10,8 @@
 
 ## Common Selectors
 
+## Common pseudo clases
+
 ## Common Styling Techniques
 > centering horizontally, Make a picture a perfect circle
 
@@ -29,3 +31,4 @@
 ## Popular CSS Frameworks (compare/contrast them)
 
 ## Technical Challenge
+> Link to challenge repo after you give your presentation

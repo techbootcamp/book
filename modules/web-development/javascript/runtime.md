@@ -31,9 +31,10 @@
 
 ### Event Loop
 
-## Demo of an Engine
+## Demo how to compile a JS Engine (V8 or ChakraCore)
 
 ## Technical Challenge
+> Link your challenge  after you give your presentation
 
 ## Resources
 * [What is an Event Loop? (Youtube)](https://www.youtube.com/watch?v=8aGhZQkoFb)
