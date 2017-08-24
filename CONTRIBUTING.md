@@ -1,14 +1,15 @@
 # Contribute Guide
 
-## Getting Started (Local gitbook)
-1. `git clone git@github.com:techbootcamp/techbootcamp.github.io.git`
+## Getting started (Local gitbook)
+1. `git clone https://github.com/techbootcamp/book.git`
 2. `yarn global add gitbook-cli` or `npm install gitbook-cli -g`
-3. `yarn` or `npm install`
-3. `gitbook update`
-4. `gitbook serve`
-5. go to `localhost:4000`
+3. `cd book`
+4. `yarn` or `npm install`
+5. `gitbook update`
+6. `gitbook serve`
+7. go to `localhost:4000`
 
-## Some Features you can include in this gitbook
+## Some features you can include in this gitbook
 Check the markdown of this page to see the source
 
 **Youtube videos**
