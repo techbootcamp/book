@@ -4,7 +4,7 @@
     * [Contributing Guideline](CONTRIBUTING.md)
 * [Core Modules]()
     * [Infrastructure]()
-        * [Operating System](modules/infrastructure/operating-system.md)
+        * [Operating Systems](modules/infrastructure/operating-systems.md)
         * [HTTP](modules/infrastructure/http.md)
     * [Web Development]()
         * [API Design](modules/web-development/api.md)
