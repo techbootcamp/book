@@ -254,12 +254,11 @@ I sense a demo coming on....
 
 GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. It was developed internally by Facebook in 2012 and went public in 2015.
 
+![Diagram](https://cdn-images-1.medium.com/max/2000/1*RapSQHY4a5TWqDaKpxUe-A.png)
 
 
-> overview and a history
-> Why do people use GraphQL?
-> How does it solve some of the pain points of REST?
-> How can people get 
+With REST APIs, different resources are available at different URIs. With the one query call, you can get all the information you need with GraphQL
+
 
 ## Technical Challenge
 
