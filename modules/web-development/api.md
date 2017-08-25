@@ -252,6 +252,9 @@ I sense a demo coming on....
 
 ## GraphQL
 
+GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. It was developed internally by Facebook in 2012 and went public in 2015.
+
+
 
 > overview and a history
 > Why do people use GraphQL?
