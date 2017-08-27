@@ -1,5 +1,7 @@
 # SOLID Principles
 
+[SOLID Principles presentation](./SOLID Principles.pdf)
+
 ## Single responsibility principle
 > A example from a project you've seen that uses Single Responsibility
 

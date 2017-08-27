@@ -169,6 +169,28 @@ TCP three-way handshake is used by TCP to set up a TCP/IP connection. There are 
 An important design element ensures that both computers initiate separate TCP socket connections simultaneously, which allows bi-directional and multiple streams of traffic.
 
 ### SYNC, SYN-ACK, ACK (Synchronize and Acknowledgement)
+```graph
+sequenceDiagram
+    participant Client
+    participant Server
+    Note over Client, Server: Both connections are closed
+    loop Listening
+        Server-->Server: Wait for Client
+    end
+    Note over Client: Create and send SYN packet
+    Client->>Server: SYN
+    Note over Client: Waiting for SYN-ACK
+    Note over Server: Receive SYN, send back SYN-ACK
+    Server->>Client: SYN-ACK
+    Note over Server: Waiting for ACK
+    Note over Client: Receive SYN-ACK, send back ACK
+    Client->>Server: ACK
+    Note over Client: Connection Established
+    Note over Server: Received ACK
+    Note over Server: Connection Established
+    Note over Client, Server: HTTP messages over TCP/IP
+```
+
 1. [Computer A] sends a TCP `SYN` packet to [Computer B]
 2. [Computer B] receives `SYN`
 3. [Computer B] sends a `SYN-ACK` to [Computer A]
@@ -176,6 +198,7 @@ An important design element ensures that both computers initiate separate TCP so
 5. [Computer A] sends `ACK` to [Computer B]
 6. [Computer B] receives `ACK`
 7. **TCP socket connection is established**
+
 
 > User Datagram Protocol (UDP) does not establish a connection like TCP, it is connectionless. UDP sends data without acknowledgement of a connection being established. Often called 'unreliable protocol'.
 
@@ -218,6 +241,19 @@ A computer system that processes incoming traffic requests in the form of HTTP, 
 ## Apache 
 38% of all sites / 52% of active sites
 
+**Enabling**: 
+* HTTP/2 requires Apache HTTP 2.4.17 or later versions
+* Compile Apache HTTP with http2 and ssl modules
+* `.configure --enable-ssl --enable-so --enable-http2`
+  * Secure socket layer, shared object, HTTP/2.0
+* Once installed, load modules
+* `LoadModule http2_module modules/mod_http2.so`
+* Add protocol directives
+* `Protocols h2 h2c http/1.1`
+  * h2 (HTTP/2 over SSL/TLS)
+  * h2c (HTTP/2 over TCP)
+  * http/1.1 (If client doesn't accept HTTP/2, default)
+
 **Advantage**
 - Open Source, free
 - Flexible with a modular approach
@@ -230,9 +266,12 @@ A computer system that processes incoming traffic requests in the form of HTTP, 
 ## Microsoft IIS
 31% of all sites / 11% of active sites
 
+**Enabling**: 
+* Most recent IIS is preconfigured to support HTTP/2.0 by default
+
 **Advantage**
 - Supported by Microsoft
-- Compadible to .NET Framework and ASPX scripts
+- Compatible to .NET Framework and ASPX scripts
 - Integrates easily with Microsoft services (Azure AD, SQL Server, ASP, etc..)
 
 **Disadvantage**
@@ -240,6 +279,17 @@ A computer system that processes incoming traffic requests in the form of HTTP, 
 
 ## NGINX
 15% of all sites / 14% of active sites
+
+**Enabling**:
+* Nginx 1.9.5 or higher supports HTTP/2.0
+* Add `http2` parameter in listen directive
+```
+server {
+        listen       443 http2 ssl chandan.io;
+        …....
+}
+```
+* HTTP/2 is supported only over HTTPS, can only be added to server with SSL configuration
 
 **Advantage**
 - Open Source, free
@@ -252,10 +302,7 @@ A computer system that processes incoming traffic requests in the form of HTTP, 
 * [Fiddler](https://www.telerik.com/download/fiddler)
 * [Wireshark](https://www.wireshark.org/)
 
-## Technical Challenge
-Write a script to identify all (2) character Vanity URL combinations that are available on [aka.ms](aka.ms) url manager.
-
-> Example: `aa` is taken by keleung, `wq` is free
-
 ## Resources
 * [Awesome Presentation](https://robrich.org/slides/anatomy_of_a_web_request/)
+* [HTTP/2 on IIS](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-10/http2-on-iis)
+* [HTTP/2 on Apache and NGINX](https://geekflare.com/http2-implementation-apache-nginx/)
