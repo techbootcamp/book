@@ -207,7 +207,7 @@ button {
 
 ````css
 
-/* Score: 001 */
+/* Score: 1 */
 button {
     background-color: blue;
 }
@@ -218,12 +218,12 @@ button {
 }
 
 /* Score: 11 */
-.toolbar button {
+button.toolbar  {
     background-color: grey;
 }
 
-/* Score: 111 */
-#printButton .toolbar button {
+/* Score: 110 */
+#printButton.toolbar  {
     background-color: yellow;
 }
 
@@ -238,8 +238,6 @@ button {
 CSS provides a way to override specificity priority by using  `!important`. While powerful, usually it is preferred to use the default priority, or using a more specific selector.
 
 ````css
-/* foo.css */
-
 button {
     background-color: blue  !important;
 }
@@ -450,8 +448,6 @@ div {
 
 ![responsive](/images/css/percentages.gif)
 
-
-
 ## Responsive web design
 ![responsive](/images/css/responsiveglyph.png)
 While browsers have always been resizable, up until a few years ago, many websites were designed for a common desktop page resolution. Even as late as 2010, many websites were designed with mostly fixed layouts and optimized for a 1024x768 window size. The iPhone had been out and mainstream for a few years, but many developers who wanted to create a great website for the iPhone would create an entirely different website for their mobile websites.
@@ -460,14 +456,110 @@ Enter the responsive design movement, which encouraged sites that not only respo
 
 ![responsive snake](/images/css/responsivesnake.jpg)
 
-While some tools for building responsive layouts have long been supported by CSS, like percentages, there was limite 
+While many tools for building responsive layouts have long been supported by CSS, like percentages, there was limited support for building page, or site-wide layouts that responded and adapted screen size changes as big as changing from a desktop monitor to a mobile phone.
 
-
-
+With the introduction of CSS3 a number of tools were introduced to aid this in modern browsers. First **Flexbox** gained broad support, and more recently **Grid** support has been added for most browsers.
 
 ### Flexbox
+The Flexible Box Layout (Flexbox) provides an easy way to layout, align and distribute space with a group of objects. There are tons of ways to align and justify content, but here's one example of how to distribute space between objects and center them, similar to our above example.
+
+````css
+/* Set up the parent container as the flexbox */
+body { 
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+div {
+    margin: auto;
+    width: 60px;
+    height: 60px;
+}
+````
+
+![Flexbox](/images/css/flexbox.gif)
+
+````css
+/* Align a flexbox vertically */
+body { 
+    display: flex;
+    flex-align: column; /
+    height: 100%;
+    width: 100%;
+}
+````
+
+![Flexbox](/images/css/flexbox-vertical.gif)
 
 ### Grid
+Grid is a layout construct that desktop app developers have been familiar with for a long time. Most app UI layouts are setup as a grid, with headers, toolbars, and panes. As the web became a replacement for many desktop apps, it makes sense that it would get a similar layout construction.
+
+Grid allows you to set up rows and columns of different sizes, with some useful constructs for laying out rows and columns proportionally to the available space. One nice feature of both grid and flexbox is that they are *source order independent*, which means that that you can display content anywhere you want regardless of it's order in the DOM. 
+
+![Grid](/images/css/grid.gif)
+
+````css
+/* default.css */
+.grid {
+    display: grid;
+    grid-template-columns:  2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#div1 {
+    background-color: magenta;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#div2 {
+    background-color: cyan;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#div3 {
+    background-color: yellow;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+````
+
+````html
+    <!-- default.html -->
+    <div class="grid">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+````
+
+> Author's note: Most people think of grid as being *new* because it just gained support in Chrome. But my team on Windows was working with the W3C to get it added to the spec back in 2010, and IE11 shipped with support for it in 2011. 
+>
+> ![Grid before it was cool](/images/css/hashtags.png)
+
+### Media Queries
+Usually when you're designing a website there becomes a point where your content doesn't fit nicely on screen anymore, even with sizing, and also there are some common sizes like for a mobile phone, or a portrait tablet that you want to support well. **CSS Media Queries** are your friend. They allow you to apply a separate set of styles for that new layout.
+
+In this case, we use a screen media query to change the grid columns when the screen is portrait. 
+
+````css
+@media screen and (orientation: portrait) {
+    .grid {
+        grid-template-columns:  1fr ;
+        grid-template-rows:  1fr 1fr 2fr;
+    }
+
+    #div3 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    
+}
+````
+![Portrait](/images/css/portrait.gif)
+
 
 ## CSS Transitions and CSS Animations
 
