@@ -136,7 +136,7 @@ Frame size 8
 ### Part 2: 40 minutes
 Given what we know about parsing, ASTs, and compiling, let's design a weird compiler together! This compiler will take TI-99/4A Extended BASIC as its input and Javascript as its output. (This way, we could run old TI-99/4A Extended BASIC code in the browser!) 
 
-1. This project is inspired by Mariko Kosaka's [Article] [How to be a compiler&mdash;make a compiler with Javascript](https://medium.com/@kosamari/how-to-be-a-compiler-make-a-compiler-with-javascript-4a8a13d473b4) and [JBasic: A BASIC to Javascript compiler](https://www.codeproject.com/Articles/25069/JSBasic-A-BASIC-to-JavaScript-Compiler). Review the content at both of these links.
+1. This project is inspired by Mariko Kosaka's [How to be a compiler&mdash;make a compiler with Javascript](https://medium.com/@kosamari/how-to-be-a-compiler-make-a-compiler-with-javascript-4a8a13d473b4) and [JBasic: A BASIC to Javascript compiler](https://www.codeproject.com/Articles/25069/JSBasic-A-BASIC-to-JavaScript-Compiler). Review the content at both of these links.
 2. Visit [archive.org](http://www.archive.org) and search for books containing the phrase "TI-99." Identify books that describe how to write code in TI-99 BASIC (or TI-99 BASIC Extended).
 
 ![The computer cat](../../../images/runtime/matilda.png)
