@@ -207,22 +207,22 @@ button {
 
 ````css
 
-/* Score: 1 */
+/* Score: 0,0,1 */
 button {
     background-color: blue;
 }
 
-/* Score: 10 */
+/* Score: 0,1,0 */
 .toolbar {
     background-color: magenta;
 }
 
-/* Score: 11 */
+/* Score: 0,1,1 */
 button.toolbar  {
     background-color: grey;
 }
 
-/* Score: 110 */
+/* Score: 1,1,0 */
 #printButton.toolbar  {
     background-color: yellow;
 }
@@ -484,7 +484,7 @@ div {
 /* Align a flexbox vertically */
 body { 
     display: flex;
-    flex-align: column; /
+    flex-align: column;
     height: 100%;
     width: 100%;
 }
@@ -493,7 +493,7 @@ body {
 ![Flexbox](/images/css/flexbox-vertical.gif)
 
 ### Grid
-Grid is a layout construct that desktop app developers have been familiar with for a long time. Most app UI layouts are setup as a grid, with headers, toolbars, and panes. As the web became a replacement for many desktop apps, it makes sense that it would get a similar layout construction.
+Grid is a layout construct that desktop app developers have been familiar with for a long time. Most app UI layouts are setup as a grid, with headers, toolbars, and panes. As the web became a replacement for many desktop apps, it makes sense that it would get a similar layout construct.
 
 Grid allows you to set up rows and columns of different sizes, with some useful constructs for laying out rows and columns proportionally to the available space. One nice feature of both grid and flexbox is that they are *source order independent*, which means that that you can display content anywhere you want regardless of it's order in the DOM. 
 
