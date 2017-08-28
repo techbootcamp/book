@@ -4,11 +4,18 @@
         "mermaid-full@>=0.5.1",
         "youtube",
         "prism", "-highlight",
-        "disqus"
+        "disqus",
+        "klipse"
     ],
     "pluginsConfig": {
         "disqus": {
             "shortName": "techbootcamp"
+        },
+        "prism": {
+            "ignore": [
+                "graph",
+                "eval-js"
+            ]
         }
     }
 }
