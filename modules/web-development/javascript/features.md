@@ -165,7 +165,7 @@ standaloneDrinkCoffee.call(gabby)
 ```
 
 ### A function inside of a function inside of an object
-![](/images/js-swanson.jpg)
+![](/images/js-features/js-swanson.jpg)
 ```eval-js
 var ron = {
     name: 'Ron',
@@ -199,7 +199,7 @@ This is the other way you'd lose the context of a function.
 
 
 ## Javascript is a Object Oriented Language
-![](/images/js-drew-everything.jpg)
+![](/images/js-features/js-drew-everything.jpg)
 
 There is no classes in Javascript.  Everything is an object (except for primitive types).  So how can you make a new instance of something based on another thing?
 
