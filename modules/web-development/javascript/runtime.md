@@ -101,7 +101,7 @@ And finally, perhaps now the call stack portion of a Javascript debugger makes a
 
 ## Technical challenge
 
-### Part 1
+### Part 1: 20 minutes
 As we learned today, V8 and ChakraCore take advantage of blended interpretation/compilation, including a first pass that compiles to machine code. In theory, you should be able to write some simple Javascript, pass it through one of these engines, and get some assembly or bytecode out the other end. Right? Let's try it out!
 
 Up until now, we've been talking about V8 in the browser (Chrome). But for our purposes,getting at V8 via Node.js will be the easiest way to dive in and look at some bytecode.
@@ -133,8 +133,15 @@ Frame size 8
 
 **Bonus: Can this be done with the Chakra engine? Let's see it!**
 
-### Part 2
-We learned that there are certain programming practices that can improve Javascript execution. Make a list of three to four practices listed here or found in outside research. Then, develop a way to test execution savings using Chrome's Javascript profiler (found in the F12 developer tools) or Loupe. Consider other non-code factors that will affect execution time.
+### Part 2: 40 minutes
+Given what we know about parsing, ASTs, and compiling, let's design a weird compiler together! This compiler will take TI-99/4A Extended BASIC as its input and Javascript as its output. (This way, we could run old TI-99/4A Extended BASIC code in the browser!) 
+
+1. This project is inspired by Mariko Kosaka's [Article] [How to be a compiler&mdash;make a compiler with Javascript](https://medium.com/@kosamari/how-to-be-a-compiler-make-a-compiler-with-javascript-4a8a13d473b4) and [JBasic: A BASIC to Javascript compiler](https://www.codeproject.com/Articles/25069/JSBasic-A-BASIC-to-JavaScript-Compiler). Review the content at both of these links.
+2. Visit [archive.org](http://www.archive.org) and search for books containing the phrase "TI-99." Identify books that describe how to write code in TI-99 BASIC (or TI-99 BASIC Extended).
+
+![The computer cat](../../../images/runtime/matilda.png)
+
+3. Design a parser (pseudocode, drawings, or real code) that will take a subset of TI-99 BASIC commands and convert them to Javascript. Your parser should generate something like an AST as an intermediary.
 
 ### Part 3
 Write a blog post, tweet, or tell a friend about what you learned!
@@ -142,10 +149,13 @@ Write a blog post, tweet, or tell a friend about what you learned!
 ## Resources
 * [Article] [Concurrency model and event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 * [Article] [Events, concurrency, and Javascript](https://danmartensen.svbtle.com/events-concurrency-and-javascript)
+* [Article] [How to be a compiler&mdash;make a compiler with Javascript](https://medium.com/@kosamari/how-to-be-a-compiler-make-a-compiler-with-javascript-4a8a13d473b4)
 * [Article] [Is Javascript really interpreted or compiled language?](http://voidcanvas.com/is-javascript-really-interpreted-or-compiled-language/)
+* [Article] [JBasic: A BASIC to Javascript compiler](https://www.codeproject.com/Articles/25069/JSBasic-A-BASIC-to-JavaScript-Compiler)
 * [Article] [Understanding V8's bytecode](https://medium.com/dailyjs/understanding-v8s-bytecode-317d46c94775)
+* [Demo] [sbn - SVG by Numbers](https://kosamari.github.io/sbn/)
 * [Wiki] [ChakraCore architecture overview](https://github.com/Microsoft/ChakraCore/wiki/Architecture-Overview)
-* [Wiki] [Mozilla Web APIs](https://developer.mozilla.org/en-US/docs/Web/API)
-* [Wiki] [V8](https://github.com/v8/v8/wiki)
 * [Video] [Javascript engines: How do they even?](https://www.youtube.com/watch?v=p-iiEDtpy6I)
 * [Video] [Help, I'm stuck in an event loop](https://vimeo.com/96425312)
+* [Wiki] [Mozilla Web APIs](https://developer.mozilla.org/en-US/docs/Web/API)
+* [Wiki] [V8](https://github.com/v8/v8/wiki)
