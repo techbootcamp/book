@@ -306,3 +306,6 @@ server {
 * [Awesome Presentation](https://robrich.org/slides/anatomy_of_a_web_request/)
 * [HTTP/2 on IIS](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-10/http2-on-iis)
 * [HTTP/2 on Apache and NGINX](https://geekflare.com/http2-implementation-apache-nginx/)
+
+## Technical Challenge
+* [Link to challenge repo](https://github.com/techbootcamp/HTTP_TechChallenge)
