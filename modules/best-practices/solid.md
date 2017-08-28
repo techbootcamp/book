@@ -2,20 +2,28 @@
 
 [SOLID Principles presentation](./SOLID Principles.pdf)
 
+# Code
+[Lab exercises](https://github.com/DavidGiard/SolidDemos/tree/master/SOLID_Lab)
+
+[Demos](https://github.com/DavidGiard/SolidDemos)
+
 ## Single responsibility principle
-> A example from a project you've seen that uses Single Responsibility
+> A class should have one and only one reasons to change.
+
 
 ## Open closed principle
-> Example how this helps with modularity and maintainability
+> Objects or entities should be 
+- open for extension;
+- but closed for modification
 
 ## Liskov substitution principle
-> Do a demo of the power of this principle. (one line change results in functionality)
+> If something is true for the base class, it must be true for every derived class
 
 ## Interface segregation principle
-> "money holding a banana when you just want a banana" analogy?
+> A client should never be forced to implement and interface that it doesn't use 
 
 ## Dependency Inversion principle
-> Find an example where you've seen this used
+> Entities must depend on abstractions, not on concrete implementations
 
 ## Technical Challenge
-> Link to challenge after you give your presentation (Maybe refactor a messy project?)
+> [Challenge](https://github.com/DavidGiard/SolidDemos/tree/master/SOLID_Lab)
