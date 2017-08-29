@@ -269,10 +269,10 @@ h1.title {
     background-color: #00FFFF;
 }
 
-/* Colors can be set with rgb or rbgb syntax */
+/* Colors can be set with rgb or rbga syntax */
 .content div {
     color: rgb(13,13,13);
-    background-color: rgba(121,208,121, 200);
+    background-color: rgba(121,208,121, 0.2);
 }
 
 ````
