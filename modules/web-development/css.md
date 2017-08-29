@@ -91,11 +91,11 @@ a, div, span {
 Pseudo-classes allow you to reference an element while it is in a specific state. For example, this is how you change color when someone hovers or clicks on a button. 
 
 ````css
-button::hover {
+button:hover {
     background-color: yellow;
 }
 
-button::active {
+button:active {
     background-color: cyan; 
 }
 ````
@@ -112,11 +112,11 @@ blockquote::first-letter {
     color: magenta;
 }
 
-blockquote:before {
+blockquote::before {
     content : open-quote;
 }
 
-blockquote:after{
+blockquote::after{
     content : close-quote;
 }
 ````
