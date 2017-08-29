@@ -6,8 +6,9 @@
   "dependencies": {
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-disqus": "^0.1.0",
+    "gitbook-plugin-klipse": "^1.1.0",
     "gitbook-plugin-mermaid-full": "^0.5.1",
-    "gitbook-plugin-prism": "^2.2.1",
+    "gitbook-plugin-prism": "^2.3.0",
     "gitbook-plugin-youtube": "^1.1.0"
   },
   "devDependencies": {

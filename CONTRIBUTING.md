@@ -38,6 +38,19 @@ requestRandomNumberFact
   })
 ```
 
+**REPL JS using klipse**
+```eval-js
+//This section is interactive/editable
+
+function greet() {
+  return 'Welcome to Tech Bootcamp!'
+}
+
+greet()
+// You will see the last return below
+```
+See [Klipse](https://github.com/viebel/klipse)
+
 ## Publishing the Gitbook
 1. `git add .`
 2. Commit your changes with `git commit -m "<YOUR COMMIT MESSAGE>"`
