@@ -411,6 +411,8 @@ While this gives you the most direct control over the elements on the page, it d
 
 ![Fixed layout large](/images/css/positioning-fixed-large.png)
 
+![css can kill you](http://starecat.com/content/wp-content/uploads/css-can-kill-you-plane-seats-outside-of-a-plane-fail.jpg)
+
 ### Relative Layouts
 Building relative layouts and limiting the use of specific pixel values allows for a layout that adapts and responds to changes to changes in element and window sizes dynamic. While ultimately, some objects will have their size or margins defined, 
 
@@ -561,23 +563,41 @@ In this case, we use a screen media query to change the grid columns when the sc
 ![Portrait](/images/css/portrait.gif)
 
 
-## CSS Transitions and CSS Animations
+## CSS Transforms
 
-## CSS Pre-processors and their purpose
+Transforms are a powerful tool to scale, move (translate), and rotate elements on the page.
+* Modifications of objects after layout step
+* Often CPU-independent by using GPU in modern browsers.
 
-## CSS Methodologies
+````css
+   div {
+       transform: scale(2) translateY(20px) rotateZ(-60);
+   }
+````
 
-### OOCSS
+![Transform](/images/css/transform.png)
 
-### BEM
 
-### SMACSS
+## CSS Transitions
 
-## Popular CSS Frameworks
 
-### SASS
+
+````css
+   .defaultState {
+       transition: transform 2s ease-in-out 1s;
+   }
+
+    .defaultState.newState {
+       transform: scale(2) translateY(20px) rotateZ(-60);
+   }
+````
+
+
 
 ## Technical Challenge
-> Link to challenge repo after you give your presentation
 
-![css can kill you](http://starecat.com/content/wp-content/uploads/css-can-kill-you-plane-seats-outside-of-a-plane-fail.jpg)
+![Dudley](/images/css/dudley.gif)
+
+> [Link to challenge repo](https://github.com/techbootcamp/CSS_TechChallenge)
+
+![Chess](/images/css/chess.gif)
