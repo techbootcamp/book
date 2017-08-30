@@ -1,6 +1,6 @@
 # Javascript Language Features
 
-![](images/js-features/js-quiz.jpg)
+![](/images/js-features/js-quiz.jpg)
 
 Javascript is an object-oriented and functional language.
 
