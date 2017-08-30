@@ -91,11 +91,11 @@ a, div, span {
 Pseudo-classes allow you to reference an element while it is in a specific state. For example, this is how you change color when someone hovers or clicks on a button. 
 
 ````css
-button::hover {
+button:hover {
     background-color: yellow;
 }
 
-button::active {
+button:active {
     background-color: cyan; 
 }
 ````
@@ -112,11 +112,11 @@ blockquote::first-letter {
     color: magenta;
 }
 
-blockquote:before {
+blockquote::before {
     content : open-quote;
 }
 
-blockquote:after{
+blockquote::after{
     content : close-quote;
 }
 ````
@@ -207,22 +207,22 @@ button {
 
 ````css
 
-/* Score: 1 */
+/* Score: 0,0,1 */
 button {
     background-color: blue;
 }
 
-/* Score: 10 */
+/* Score: 0,1,0 */
 .toolbar {
     background-color: magenta;
 }
 
-/* Score: 11 */
+/* Score: 0,1,1 */
 button.toolbar  {
     background-color: grey;
 }
 
-/* Score: 110 */
+/* Score: 1,1,0 */
 #printButton.toolbar  {
     background-color: yellow;
 }
@@ -269,10 +269,10 @@ h1.title {
     background-color: #00FFFF;
 }
 
-/* Colors can be set with rgb or rbgb syntax */
+/* Colors can be set with rgb or rbga syntax */
 .content div {
     color: rgb(13,13,13);
-    background-color: rgba(121,208,121, 200);
+    background-color: rgba(121,208,121, 0.2);
 }
 
 ````
@@ -411,6 +411,8 @@ While this gives you the most direct control over the elements on the page, it d
 
 ![Fixed layout large](/images/css/positioning-fixed-large.png)
 
+![css can kill you](http://starecat.com/content/wp-content/uploads/css-can-kill-you-plane-seats-outside-of-a-plane-fail.jpg)
+
 ### Relative Layouts
 Building relative layouts and limiting the use of specific pixel values allows for a layout that adapts and responds to changes to changes in element and window sizes dynamic. While ultimately, some objects will have their size or margins defined, 
 
@@ -484,7 +486,7 @@ div {
 /* Align a flexbox vertically */
 body { 
     display: flex;
-    flex-align: column; /
+    flex-align: column;
     height: 100%;
     width: 100%;
 }
@@ -493,7 +495,7 @@ body {
 ![Flexbox](/images/css/flexbox-vertical.gif)
 
 ### Grid
-Grid is a layout construct that desktop app developers have been familiar with for a long time. Most app UI layouts are setup as a grid, with headers, toolbars, and panes. As the web became a replacement for many desktop apps, it makes sense that it would get a similar layout construction.
+Grid is a layout construct that desktop app developers have been familiar with for a long time. Most app UI layouts are setup as a grid, with headers, toolbars, and panes. As the web became a replacement for many desktop apps, it makes sense that it would get a similar layout construct.
 
 Grid allows you to set up rows and columns of different sizes, with some useful constructs for laying out rows and columns proportionally to the available space. One nice feature of both grid and flexbox is that they are *source order independent*, which means that that you can display content anywhere you want regardless of it's order in the DOM. 
 
@@ -561,23 +563,41 @@ In this case, we use a screen media query to change the grid columns when the sc
 ![Portrait](/images/css/portrait.gif)
 
 
-## CSS Transitions and CSS Animations
+## CSS Transforms
 
-## CSS Pre-processors and their purpose
+Transforms are a powerful tool to scale, move (translate), and rotate elements on the page.
+* Modifications of objects after layout step
+* Often CPU-independent by using GPU in modern browsers.
 
-## CSS Methodologies
+````css
+   div {
+       transform: scale(2) translateY(20px) rotateZ(-60);
+   }
+````
 
-### OOCSS
+![Transform](/images/css/transform.png)
 
-### BEM
 
-### SMACSS
+## CSS Transitions
 
-## Popular CSS Frameworks
 
-### SASS
+
+````css
+   .defaultState {
+       transition: transform 2s ease-in-out 1s;
+   }
+
+    .defaultState.newState {
+       transform: scale(2) translateY(20px) rotateZ(-60);
+   }
+````
+
+
 
 ## Technical Challenge
-> Link to challenge repo after you give your presentation
 
-![css can kill you](http://starecat.com/content/wp-content/uploads/css-can-kill-you-plane-seats-outside-of-a-plane-fail.jpg)
+![Dudley](/images/css/dudley.gif)
+
+> [Link to challenge repo](https://github.com/techbootcamp/CSS_TechChallenge)
+
+![Chess](/images/css/chess.gif)
