@@ -46,11 +46,12 @@ Containers are virtualization at a whole 'nuther level.  The easiest way to unde
 
 ### Layered Filesystem
 ![Ogres](/images/depl/ShrekLayers.JPG)
-Onions have layers. 
 
-Ogres have layers.
+Onions have layers... 
 
-Containers have layers.
+Ogres have layers...
+
+**And Containers have layers.**
 
 ![Layers](/images/depl/layers.jpg)
 
