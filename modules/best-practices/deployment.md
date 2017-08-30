@@ -45,14 +45,14 @@ Containers are virtualization at a whole 'nuther level.  The easiest way to unde
 > Simple demo
 
 ### Layered Filesystem
-![Ogres](/images/depl/ShrekLayers.jpg)
+![Ogres](/images/depl/ShrekLayers.JPG)
 Onions have layers. 
 
 Ogres have layers.
 
 Containers have layers.
 
-![Layers](/images/depl/Layers.jpg)
+![Layers](/images/depl/layers.jpg)
 
 Images have layers, but containers have one more than the image it's based on.
 
