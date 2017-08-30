@@ -1,5 +1,7 @@
 # Javascript Language Features
 
+![](/images/js-features/js-quiz.jpg)
+
 Javascript is an object-oriented and functional language.
 
 ## Types
@@ -41,7 +43,19 @@ bot1
 ```
 
 ## Functions
-
+```graph
+graph TB
+    subgraph objects
+    functions
+    arrays
+    ...
+    end
+    subgraph primary types
+    strings
+    booleans
+    ....
+    end
+```
 ### Defining a function in Javascript
 
 **Declaration:**
@@ -173,13 +187,14 @@ var ron = {
     coffeeConsumed: 0,
     drinkCoffee: function () {
         function sendAlert () {
-            return this.name + ', you drank too much coffee'
+            console.log(this.name + ', get more coffee')
         }
 
         this.coffeeLeft--
         this.coffeeConsumed++
         if (this.coffeeLeft == -1) {
-          return sendAlert()
+            setTimeout(sendAlert, 2000)
+            return this.name + ', you drank too much coffee'
         } 
         return this.name + ' drank some coffee'
     }
@@ -194,9 +209,6 @@ ron.drinkCoffee()
 ```
 
 This is the other way you'd lose the context of a function.  
-
-### arrow functions
-
 
 ## Javascript is a Object Oriented Language
 ![](/images/js-features/js-drew-everything.jpg)
@@ -215,7 +227,7 @@ you create a new instance by using the `new` keyword.
 function Water() {
     this.caffineLevel = 0
     this.temperature = 0
-    this.heatUp = function () {
+    this.heatUpInHeater = function () {
         this.temperature = 50
     }
 }
@@ -224,15 +236,17 @@ var kevinsWater = new Water()
 var gabbysWater = new Water()
 var paulsWater = new Water()
 
-kevinsWater.heatUp()
+kevinsWater.heatUpInHeater()
 
-// is kevinsWater.heatUp the same function as gabbysWater.heatUp?
+// is kevinsWater.heatUpInHeater the same function as gabbysWater.heatUpInHeater?
 
 ```
 
 ### `prototype` property on a constructor function
 
-Whatever is in the `prototype` object, automatically gets shared across all of the instanciated objects. 
+When you create a function, an property named `prototype` is assigned to this function object with the value of an object.  This object initially has a `constructor` property on it.
+
+Whatever is in this `prototype` object, automatically gets shared across all of its instanciated objects. 
 
 ```eval-js
 function SmartWater() {
@@ -240,32 +254,32 @@ function SmartWater() {
     this.temperature = 0
 }
 
-SmartWater.prototype.heatUp = function () {
+SmartWater.prototype.heatUpInHeater = function () {
     this.temperature = 60
 }
 
 var kevinsSmartWater = new SmartWater()
 var gabbysSmartWater = new SmartWater()
 
-kevinsSmartWater.heatUp === gabbysSmartWater.heatUp
+kevinsSmartWater.heatUpInHeater === gabbysSmartWater.heatUpInHeater
 ```
 
 You can dynamically change the behaviors of the a defined type.
 
 ```eval-js
-kevinsSmartWater.heatUp()
+kevinsSmartWater.heatUpInHeater()
 
 // console.log('kevins water temp pre change', kevinsSmartWater.temperature)
 
-SmartWater.prototype.heatUp = function () {
+SmartWater.prototype.heatUpInHeater = function () {
     this.temperature = 100
 }
 
-kevinsSmartWater.heatUp()
+kevinsSmartWater.heatUpInHeater()
 
 // console.log('kevins water temp after change', kevinsSmartWater.temperature)
 
-gabbysSmartWater.heatUp()
+gabbysSmartWater.heatUpInHeater()
 
 // console.log('gabbys water temp after change', gabbysSmartWater.temperature)
 
@@ -281,7 +295,7 @@ Javascript uses prototypes to create a **prototypal chain** which produces its i
 ### When you create a function...
 
 Everytime you create a function, Javascript puts an object in the `prototype` property onto that function.
-This `prototype` property object has a property called `constructor` which references back to the function.
+This `prototype` property object has a property called `constructor`.  this constructor simply references back to the function.
 
 ```eval-js
 function Park(name) {
@@ -304,13 +318,141 @@ var proto2 = grantPark.__proto__
 ```
 
 ### Object Inheritance
+So every object has the `[[prototype]]` property (commonly named `__proto__`).  You can actually "hijack" this property and reference this object to ANY object essentially changing the type of that object.
+
+hijacking the `__proto__` property:
+```eval-js
+var ironmanMk1 = {
+    name: 'Mk1',
+    altitude: 0,
+    takeOff: function () {
+        this.altitude: 100
+    }
+}
+
+var ironmanMk2 = {
+    name: 'Mk2',
+    autopilot: true
+}
+
+ironmanMk2.__proto__ = ironmanMk1
+
+// ironmanMk2.takeOff
+```
+#### `Object.create()`
+
+`Object.create()` is a "static" method on the base `Object` constructor function.
+the function lets one quickly create an object by supplying the `[[prototype]]` (or `__proto__`) object, and the member properties (and its values).
+
+```eval-js
+var ironmanMk3 = Object.create(ironmanMk2, {
+    name: 'Mk3',
+    fireProjectile: function () {
+        return 'fired!'
+    }
+})
+
+// Object.getPrototypeOf(ironmanMk3)
+
+```
+
+#### How does an object find the value of a property?
+Remember in every object there is a `[[prototype]]` object.  
+When you try to access a property (could be a primitive, object, or function), and it's not on the actual object.  Javascript will look to the `[[prototype]]` object on the object, and see if the property is on there.  If it's not on there, Javascript will look at the `[[prototype]]` on there, until it finds the value.
+```eval-js
+
+// ironmanMk3.name
+// Object.getPrototypeOf(ironmanMk3)
+// show [[prototype]] of [[prototype]] of ironmanMk3
+// ironmanMk3.takeOff
+
+```
 
 ### Constructor Inheritance
+
+Sometimes you'd like to inherite from the constructor function instead of an object.  This works pretty much the same way as object inheritance with a few more considerations.
+
+#### 1. Call the parent constructor function
+Many language allow you to quickly get the parent's constructor function using keywords like `super` or `parent`.  Unfortunately, Javascript does not have that feature (until ES6).
+
+However, you can steal the parent function by setting the context with `call`.
+
+```eval-js
+function CognitiveServiceClient(host, apiKey) {
+    this.host = host
+    this.apiKey = apiKey
+}
+
+CognitiveServiceClient.prototype.fetchGetJson = function (url) {
+    return fetch(this.host + url)
+        .then(function (res) {return res.json()})
+}
+
+function FaceApiClient(host, apiKey) {
+    CognitiveServiceClient.call(this, host, apiKey)
+}
+```
+
+#### 2. Assign the `prototype` and reference back the `constructor` 
+Remember when you created a function, the prototype is automatically set, and there is a property of a `constructor` that point itself back to the function.  this constructor is then used to determine the `typeof` of its instanciated object.
+
+Because of this, if we want to instanciate a FaceApiClient by calling `client`, and we want to setup proper prototypal chain then we have to set the constructor of `FaceApiClient.prototype.constructo` back to `FaceApiClient`.
+
+```eval-js
+
+FaceApiClient.prototype = Object.create(
+    CognitiveServiceClient.prototype, {
+      getPersonGroupList: function () {
+        return this.getFetchJson(this.host + '/person-groups')
+      },
+      //constructor: FaceApiClient
+    }
+}
+
+var client = new FaceApiClient()
+
+Object.getPrototypeOf(Client)
+
+```
+
+### Bundle all the concepts together...
+To extend a constructor function you need to 
+1. Create a **function** (studly case by convention)
+2. In the **function**, call the parent constructor function by explicitly setting the context
+3. Set the `prototype` of the **function** with an object that has the parent.prototype object as its `[[prototype]]`, and the `constructor` member property reference back to the **function**.  
 
 ## ES6 Features
 That was a lot of information.. and you have to understand a lot about how Javascript works to create a simple "class"-like construct.  Also `this` is often a pain point of development when you have to use `call` or `bind` all the time.
 
 ### `class` keyword
+```eval-js
+class FancyCogServiceClient {
+    constructor (host, apiKey) {
+        this.host = host
+        this.apiKey = apiKey
+    }
+    getFetchJson(path) {
+        return fetch(this.host + path)
+            .then((res) => {
+                return res.json
+            })
+    }
+}
 
+class FancyFaceApiClient extends FancyCogServiceClient {
+    constructor(host, apiKey) {
+        super(host, apiKey)
+    }
+
+    getPersonGroupList () {
+        return this.getFetchJson(this.host + '/person-groups')
+    }
+}
+
+var fancyFaceApiClient = new FancyFaceApiClient('https://cogservices.com/face/v1', 'secret')
+
+```
 
 ### arrow functions
+Many say arrow functions are a shortcut to anonymous functions.  However it is a little more than that.
+Arrow functions do not have the concept of `this` or `arguments`, that this means is that the `this` keyword will refer to the parent scope of where the arrow function is defined.
