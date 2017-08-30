@@ -5,13 +5,10 @@ When you execute something <strong>synchronously</strong>, you wait for it to fi
 
 When you execute something <strong>asynchronously</strong>, you can execute other tasks while you are waiting for it to finish.  
 
-> A demo in the browser on what happens when you run ajax synchronously or have a long running synchronous operation in Javascript.
-TODO
-
 ## Why did Ryan Dahl choose Javascript for Node?
 Ryan Dahl is the creator of node.js, and his original presentation on it is here: http://bit.ly/original-nodejs 
 
-He showed a [graph of Apache vs. NGINX](https://youtu.be/ztspvPYybIY?t=4m46s) and their concurrency vs. memory.  Apache uses lots of memory when it has lots of concurrent clients, but NGINX uses a flat consistent amount no matter how many concurrent clients.  The difference: Apache uses one thread per connection, and Apache uses event loops.  For massive concurrency, we cannot use an OS thread for each connection.  
+He showed a [graph of Apache vs. NGINX](https://youtu.be/ztspvPYybIY?t=4m46s) and their concurrency vs. memory.  Apache uses lots of memory when it has lots of concurrent clients, but NGINX uses a flat consistent amount no matter how many concurrent clients.  The difference: Apache uses one thread per connection, and NGINX uses event loops.  For massive concurrency, we cannot use an OS thread for each connection.  
 + Context switching is not free (takes CPU time)
 + Each thread/execution stacks take up memory
 
@@ -223,7 +220,6 @@ puts(yieldedResult.value);
 
 ## async/await
 > Relationship between async/await and Promises and Generators
-TODO
 
 ```javascript
 async function program () {
@@ -264,7 +260,7 @@ function * program () {
 
 
 ## Technical Challenge
-> Link to challenge (TODO)
+Link to challenge: https://github.com/jennifermarsman/JavaScriptElevatorChallenge
 
 # Resources
 * [Original Talk on NodeJS by Ryan Dahl](https://www.youtube.com/watch?v=ztspvPYybIY)
@@ -273,4 +269,3 @@ function * program () {
 * [Article on generators and async/await](https://davidwalsh.name/es6-generators)
 * [Explaining async code samples by Hao Luo](https://github.com/howlowck/explaining-async)
 * [NodeSchool tutorials](https://nodeschool.io/) - specifically, check out `promise-it-wont-hurt` and `async-you`
-
