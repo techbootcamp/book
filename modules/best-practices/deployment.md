@@ -92,7 +92,7 @@ Before you do the challenge, you will need make sure you have the following item
 
 1. [BASH on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide) (Ubuntu version)
 2. [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (in BASH)
-3. [.NET Core 2.0](https://www.microsoft.com/net/download/core) (in BASH)
+3. [.NET Core 2.0](https://www.microsoft.com/net/download/core) (in BASH) - Not strictly required, unless you want to try containerizing a .NET Core app for extra credit.
 4. [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)
 5. [Docker for Windows](https://docs.docker.com/docker-for-windows/install) (which requires Hyper-V. I recommend the "Edge" version.  You'll be running it in "Linux container mode")
 6. For extra-credit, you'll need the [Kubernetes command-line tool, "kubectl"](https://kubernetes.io/docs/tasks/tools/install-kubectl) installed. 
