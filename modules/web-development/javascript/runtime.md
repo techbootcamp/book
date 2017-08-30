@@ -99,9 +99,9 @@ By understanding the Javascript engine/runtime, you'll also be able to take bett
 
 And finally, perhaps now the call stack portion of a Javascript debugger makes a little more sense. 
 
-## Technical challenge
 
-### Part 1: 20 minutes
+## Demo
+
 As we learned today, V8 and ChakraCore take advantage of blended interpretation/compilation, including a first pass that compiles to machine code. In theory, you should be able to write some simple Javascript, pass it through one of these engines, and get some assembly or bytecode out the other end. Right? Let's try it out!
 
 Up until now, we've been talking about V8 in the browser (Chrome). But for our purposes,getting at V8 via Node.js will be the easiest way to dive in and look at some bytecode.
@@ -133,18 +133,24 @@ Frame size 8
 
 **Bonus: Can this be done with the Chakra engine? Let's see it!**
 
-### Part 2: 40 minutes
-Given what we know about parsing, ASTs, and compiling, let's design a weird compiler together! This compiler will take TI-99/4A Extended BASIC as its input and Javascript as its output. (This way, we could run old TI-99/4A Extended BASIC code in the browser!) 
 
-1. This project is inspired by Mariko Kosaka's [How to be a compiler&mdash;make a compiler with Javascript](https://medium.com/@kosamari/how-to-be-a-compiler-make-a-compiler-with-javascript-4a8a13d473b4) and [JBasic: A BASIC to Javascript compiler](https://www.codeproject.com/Articles/25069/JSBasic-A-BASIC-to-JavaScript-Compiler). Review the content at both of these links.
-2. Visit [archive.org](http://www.archive.org) and search for books containing the phrase "TI-99." Identify books that describe how to write code in TI-99 BASIC (or TI-99 BASIC Extended).
+## Technical challenge
+
+Given what we know about parsing, ASTs, and compiling, let's design a weird compiler together! This compiler will take TI-99 BASIC as its input and Javascript as its output. (This way, we could run old TI-99 BASIC code in the browser!) 
+
+1. This project is inspired by Mariko Kosaka's [How to be a compiler&mdash;make a compiler with Javascript](https://medium.com/@kosamari/how-to-be-a-compiler-make-a-compiler-with-javascript-4a8a13d473b4) and [JBasic: A BASIC to Javascript compiler](https://www.codeproject.com/Articles/25069/JSBasic-A-BASIC-to-JavaScript-Compiler). Briefly review the content at both of these links.
+2. Open [*Matilda the Computer Cat*](https://archive.org/details/tibook_matilda-the-computer-cat-for-the-ti994a), a 1984 book about programming the TI-99. You can find other TI-99 programming books by searching [archive.org](http://www.archive.org).
 
 ![The computer cat](../../../images/runtime/matilda.png)
 
-3. Design a parser (pseudocode, drawings, or real code) that will take a subset of TI-99 BASIC commands and convert them to Javascript. Your parser should generate something like an AST as an intermediary.
+3. Design a parser that will take a subset of TI-99 BASIC commands and convert them to Javascript. Possible steps:
+    - Find a simple TI-99 BASIC program
+    - Convert it to Javascript
+    - Back-engineer a parser (real, pseudocode, or diagrammatic) that would create the Javascript you wrote from the BASIC.
 
-### Part 3
-Write a blog post, tweet, or tell a friend about what you learned!
+> Hint: The pages in *Matilda the Computer Cat* are one off; the explanation of the code will appear on the page *before* the code.
+
+4. Write a blog post, tweet, or tell a friend about what you learned!
 
 ## Resources
 * [Article] [Concurrency model and event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
