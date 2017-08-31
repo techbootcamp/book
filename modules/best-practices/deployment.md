@@ -97,4 +97,6 @@ Before you do the challenge, you will need make sure you have the following item
 5. [Docker for Windows](https://docs.docker.com/docker-for-windows/install) (which requires Hyper-V. I recommend the "Edge" version.  You'll be running it in "Linux container mode")
 6. For extra-credit, you'll need the [Kubernetes command-line tool, "kubectl"](https://kubernetes.io/docs/tasks/tools/install-kubectl) installed. 
 
-### Watch this space for the challenge
+### And now, your mission...
+You'll find the challenge here:
+[Kevin's Depl_Challenge on Github](https://github.com/KevinRemde/Depl_Challenge)
