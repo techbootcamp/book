@@ -1,4 +1,6 @@
 # Engines, runtimes, and you: A behind-the-scenes look at how Javascript Javascripts
+Author: Rachel Weil ([@partytimeHXLNT](https://twitter.com/partytimeHXLNT))
+
 Let's take a look at how the browser works to turn `const code = 'javascript';` into the meaningful array of wiggling electrons that makes up your favorite website.
 
 

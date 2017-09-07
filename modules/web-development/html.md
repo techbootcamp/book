@@ -1,4 +1,5 @@
 # HTML
+Author: Sarah Sexton ([@Saelia](https://twitter.com/Saelia))
 
 ## What is a Markup Language?
 "HTML" stands for **H**yper**T**ext **M**arkup **L**anguage.

@@ -1,4 +1,5 @@
 # API Design
+Author: Gabrielle Crevecoeur ([@NoWaySheCodes](https://twitter.com/NoWaySheCodes))
 
 ## SOAP
 

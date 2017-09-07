@@ -1,4 +1,5 @@
 # SOLID Principles
+Author: David Giard ([@DavidGiard](https://twitter.com/DavidGiard))
 
 [SOLID Principles presentation](./SOLID Principles.pdf)
 

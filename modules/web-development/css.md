@@ -1,4 +1,6 @@
 # CSS
+Author: David Washington ([@dwcares](https://twitter.com/dwcares))
+
 ![CSS is awesome](https://laughingsquid.com/wp-content/uploads/css-is-awesome-20090407-142244.jpg)
 
 ## What is CSS?

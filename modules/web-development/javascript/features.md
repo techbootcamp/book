@@ -1,4 +1,5 @@
 # Javascript Language Features
+Author: Hao Luo ([@howlowck](https://twitter.com/howlowck))
 
 ![](/images/js-features/js-quiz.jpg)
 

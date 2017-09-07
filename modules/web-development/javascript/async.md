@@ -1,4 +1,5 @@
 # Async
+Author: Jennifer Marsman ([@jennifermarsman](https://twitter.com/jennifermarsman))
 
 ## What do we mean by synchronous and asynchronous?
 When you execute something <strong>synchronously</strong>, you wait for it to finish before moving on to another task.  

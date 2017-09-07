@@ -1,4 +1,6 @@
 # HTTP
+Author: Kevin Leung ([@KSLHacks](https://twitter.com/KSLHacks))
+
 [Tim Berners-Lee]: https://en.wikipedia.org/wiki/Tim_Berners-Lee
 [World Wide Web]: https://en.wikipedia.org/wiki/World_Wide_Web
 [W3C]: https://www.w3.org/

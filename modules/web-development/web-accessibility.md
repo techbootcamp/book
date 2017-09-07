@@ -1,4 +1,5 @@
 # Web Accessibility
+Author: Brian Sherwin
 
 Inclusive Practice of building applications with interactions for functionality with consideration for people with disabilities.
 

@@ -1,4 +1,5 @@
 # Operating Systems 
+Author: Paul DeCarlo ([@pjdecarlo](https://twitter.com/pjdecarlo))
 
 ## What is an Operating System
 
