@@ -1,0 +1,7 @@
+# Markdown Files
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{htm,html,js,ts,css,scss,less}]
+indent_size = 2
+insert_final_newline = true
